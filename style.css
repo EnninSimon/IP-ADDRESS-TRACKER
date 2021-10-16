@@ -1,0 +1,46 @@
+.mainContainer{
+	background-image: url("images/backgrounda.jpg");
+	background-repeat: no-repeat;
+	background-color: yellow;
+	padding-bottom: 5px;
+}
+.box1{
+	display: inline;
+	justify-content: center;
+	align-content: center;
+	padding-top: 22px;
+}
+
+.appTitle{
+	text-align: center;
+	margin: 20px;
+	color: #fff;
+}
+
+.address-box{
+	position: relative;
+	padding-bottom: 15px;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#titles {
+	font-weight: bold;
+	font-size: 10px;
+	padding-top: 5px;
+	color: #4c4c4c;
+}
+
+#timezone{
+	font-weight: bold;
+	font-size: 20
+}
+
+#map{
+
+}
+#mapid {
+	margin-top: 50px; 
+	 height: 300px;
+}
