@@ -32,14 +32,50 @@
 	color: #4c4c4c;
 }
 
-#timezone{
+/* styles for IP ADDRESS group */
+
+#ipAddress{
 	font-weight: bold;
 	font-size: 20
 }
 
-#map{
-
+#location{
+	font-weight: bold;
+	font-size: 20;
 }
+
+#timezone{
+	font-weight: bold;
+	font-size: 20;
+}
+
+#isp{
+	font-weight: bold;
+	font-size: 20;
+}
+
+#region{
+	font-weight: bold;
+	font-size: 20;
+}
+
+#country{
+	font-weight: bold;
+	font-size: 20;
+}
+
+#utc{
+	font-weight: bold;
+	font-size: 20;
+}
+
+/* ------------- */
+
+.specialStyle{
+	display: flex;
+}
+
+
 #mapid {
 	margin-top: 50px; 
 	 height: 300px;

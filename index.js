@@ -1,40 +1,58 @@
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+mapboxgl.accessToken = 'pk.eyJ1IjoiZW5uaW4tc2ltb24iLCJhIjoiY2tqdjNycXlzMDRzNjJwbDdzN20xZGwxeCJ9.4iQpygdTEx3qnOuwmxeMJg';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11'
+});
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
 
-var marker = L.marker([51.5, -0.09]).addTo(mymap);
 
-var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(mymap);
+var directions = new MapboxDirections({
+  accessToken: mapboxgl.accessToken,
+  unit: 'metric',
+  profile: 'mapbox/cycling'
+});
 
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(mymap);
+let inputValue = document.getElementById('mybar')
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
+map.addControl(directions, 'top-left');
 
-var popup = L.popup();
+map.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true,
+  showUserHeading: true
+}));
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
+map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('body')}));
+
+//-----------------------------------------//
+
+//Add api
+const apiUrl = 'https://geo.ipify.org/api/v2/country?apiKey=at_XGn4k6pJquxPqauEaqQYMZEoVhkKI&ipAddress=8.8.8.8'
+async function getIpAddress() {
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  console.log(data)
+
+
+  //Seting the api in the ui
+  const { ip, isp } = data;
+  document.getElementById('ipAddress').textContent = ip;
+  document.getElementById('isp').textContent = isp;
+  document.getElementById('country').textContent = data.location.country;
+  document.getElementById('region').textContent = data.location.region;
+  document.getElementById('timezone').textContent = data.location.timezone;
+
 }
+getIpAddress();
 
-mymap.on('click', onMapClick);
+// fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_XGn4k6pJquxPqauEaqQYMZEoVhkKI&ipAddress=8.8.8.8`)
+//   .then(res => res.json())
+//   .then(
+//     data => console.log(data)
+//   )
+//   .catch(error => console.log(error))
+
