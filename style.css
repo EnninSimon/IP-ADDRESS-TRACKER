@@ -1,7 +1,5 @@
 .mainContainer{
 	background-image: url("images/backgrounda.jpg");
-	background-repeat: no-repeat;
-	background-color: yellow;
 	padding-bottom: 5px;
 }
 .box1{
