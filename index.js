@@ -20,7 +20,7 @@ async function getIpAddress() {
     .setLngLat([data.location.lng, data.location.lat])
     .addTo(map);
 
-  map.zoomTo(7, {
+  map.zoomTo(10, {
     duration: 2000,
     center: [data.location.lng, data.location.lat]
   });
@@ -52,7 +52,7 @@ try {
       .setLngLat([data.location.lng, data.location.lat])
       .addTo(map);
 
-    map.zoomTo(7, {
+    map.zoomTo(10, {
       duration: 2000,
       center: [data.location.lng, data.location.lat]
     });
