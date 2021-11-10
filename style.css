@@ -1,80 +1,67 @@
 .mainContainer{
 	background-image: url("images/backgrounda.jpg");
-	padding-bottom: 5px;
-}
-.box1{
-	display: inline;
-	justify-content: center;
-	align-content: center;
-	padding-top: 22px;
 }
 
 .appTitle{
 	text-align: center;
-	margin: 20px;
 	color: #fff;
 }
 
-.address-box{
-	position: relative;
-	padding-bottom: 15px;
-	border-radius: 10px;
-	background-color: #fff;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-#titles {
-	font-weight: bold;
-	font-size: 10px;
-	padding-top: 5px;
-	color: #4c4c4c;
-}
-
-/* styles for IP ADDRESS group */
-
-#ipAddress{
-	font-weight: bold;
-	font-size: 20
-}
-
-#location{
-	font-weight: bold;
-	font-size: 20;
-}
-
-#timezone{
-	font-weight: bold;
-	font-size: 20;
-}
-
-#isp{
-	font-weight: bold;
-	font-size: 20;
-}
-
-#region{
-	font-weight: bold;
-	font-size: 20;
-}
-
-#country{
-	font-weight: bold;
-	font-size: 20;
-}
-
-#utc{
-	font-weight: bold;
-	font-size: 20;
-}
-
-/* ------------- */
-
-.specialStyle{
-	display: flex;
+#searchButton{
+	color: white;
 }
 
 
 #mapid {
 	margin-top: 50px; 
 	 height: 300px;
+}
+
+
+.mapboxgl-popup {
+	max-width: 400px;
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	}
+
+.info-block{
+	border-right: 1px solid;
+	min-height: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 0 15px;
+}
+
+
+.info-block-last{
+	border-right: none;
+}
+
+.display-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -60;
+	background-color: #fff;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10%;
+	min-height: 130px;
+	position: relative;
+	z-index: 1000;
+	padding: 30px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.muted-title{
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+span.results{
+	font-weight: 500;
+	color: #2b2b2b;
+	font-size: 16px;
 }

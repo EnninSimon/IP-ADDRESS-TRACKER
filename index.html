@@ -29,46 +29,37 @@
 							<input type="text" class="form-control" id="mybar"
 								placeholder="Search for any IP address or domain" aria-label="Recipient's username"
 								aria-describedby="button-addon2">
-							<button class="btn btn-outline-secondary" type="button" id="submit"><b>></b></button>
+							<button class="btn btn-outline-secondary" type="button" id="submit"><b
+									id="searchButton">></b></button>
 						</div>
 					</div>
 					<div class="col-md-4"></div>
 				</div>
 			</div>
 
+			<h4 class="muted-title"></h4>
 
-			<div class="container address-box">
-				<div class="row">
-					<div class="col-md-3 box1">
-						<p id="titles">IP ADDRESS</p>
-						<p id="ipAddress">192.212.174.101</p>
-					</div>
-
-					<div class="col-md-3 box1">
-						<p id="titles">LOCATION</p>
-						<div class="specialStyle">
-							<p id="country">Brooklyn</p>
-							<p style="font-weight: bold;">-</p>
-							<p id="region">NY 10001</p>
-						</div>
-
-					</div>
-
-					<div class="col-md-3 box1">
-						<p id="titles">TIMEZONE</p>
-
-						<div class="specialStyle">
-							<p id="utc">UTC</p>
-							<p id="timezone">05:00</p>
-						</div>
-
-					</div>
-
-					<div class="col-md-3 box1">
-						<p id="titles">ISP</p>
-						<p id="isp">SpaceX Starlink</p>
-					</div>
+			<div class="container display-container">
+				<div class="col-md-3 info-block">
+					<h4 class="muted-title">IP ADDRESS</h4>
+					<span id="current-ip" class="results">192.212.174.101</span>
 				</div>
+
+				<div class="col-md-3 info-block">
+					<h4 class="muted-title">LOCATION</h4>
+					<span id="current-region" class="results">Brooklyn</span>
+					<span id="current-city" class="results">NY 10001</span>
+				</div>
+
+				<div class="col-md-3 info-block">
+					<h4 class="muted-title">TIMEZONE</h4>
+					<span id="current-zone" class="results">UTC +2:00</span>
+				</div>
+				<div class="col-md-3 info-block info-block-last">
+					<h4 class="muted-title">ISP</h4>
+					<span id="current-isp" class="results">Rain</span>
+				</div>
+
 			</div>
 
 		</div>
