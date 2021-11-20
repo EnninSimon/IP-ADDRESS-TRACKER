@@ -1,10 +1,13 @@
 .mainContainer{
-	background-image: url("images/backgrounda.jpg");
+	background-image: url("images/blue.png");
 }
 
 .appTitle{
 	text-align: center;
 	color: #fff;
+	padding-top: 30px;
+	margin-bottom: 20px;
+	font-weight: bold;
 }
 
 #searchButton{
